@@ -178,6 +178,15 @@ class AVNetworkRestraintWrapper(IMP.pmi.restraints.RestraintBase):
         """Evaluate the score of the restraint."""
         return self.rs.unprotected_evaluate(None) * self.weight
 
+    def get_output(self):
+        self.mdl.update()
+        output = {}
+        score = self.weight * self.rs.unprotected_evaluate(None)
+        output["_TotalScore"] = str(score)
+        output["AVNetworkRestraint_" +
+               self.label] = str(score)
+        return output
+
     def add_to_model(self, add_to_rmf=True):
         IMP.pmi.tools.add_restraint_to_model(self.mdl, self.rs,
                                              add_to_rmf=add_to_rmf)
