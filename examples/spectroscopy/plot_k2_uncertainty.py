@@ -5,12 +5,20 @@ Compute the probability of distance distributions for an
 experimental steady state donor and acceptor anisotropies.
 """
 
+import sys
 import numpy as np
-import numba as nb
 import scipy.stats
 
 import pylab as plt
 from matplotlib.ticker import (MultipleLocator, AutoMinorLocator)
+
+try:
+    import numba as nb
+except ImportError:
+    print("To run this example, please first install the 'numba'")
+    print("Python module.")
+    sys.exit(0)
+
 import IMP.bff.spectroscopy.kappa2
 from IMP.bff.spectroscopy.kappa2 import s2delta, kappasq_all_delta
 
