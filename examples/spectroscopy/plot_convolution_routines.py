@@ -18,7 +18,6 @@ The SIMD routines require CPUs with 'modern' instruction sets. Most x86 CPUs tha
 manufacture since 2012 are supported.
 
 """
-from __future__ import annotations
 import IMP.bff
 import scipy.stats
 import time
