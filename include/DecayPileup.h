@@ -19,6 +19,7 @@
 #include <IMP/bff/DecayCurve.h>
 #include <IMP/bff/DecayModifier.h>
 #include <IMP/bff/DecayRoutines.h> /* add_pile_up_to_model */
+#include <IMP/check_macros.h>
 
 IMPBFF_BEGIN_NAMESPACE
 
