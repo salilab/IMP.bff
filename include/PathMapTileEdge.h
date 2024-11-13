@@ -13,9 +13,6 @@
 
 #include <vector>
 
-#include <IMP/bff/PathMap.h>
-#include <IMP/bff/PathMapTile.h>
-
 IMPBFF_BEGIN_NAMESPACE
 
 class PathMap;

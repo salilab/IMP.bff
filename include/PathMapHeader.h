@@ -21,7 +21,6 @@
 #include <IMP/em/DensityHeader.h>
 
 #include <IMP/bff/internal/json.h>
-#include <IMP/bff/AV.h>
 
 #include <algorithm>
 
