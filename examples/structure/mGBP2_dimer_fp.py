@@ -14,9 +14,7 @@ import IMP
 import IMP.core
 import IMP.atom
 
-import RMF
 import IMP.rmf
-import ihm.cross_linkers
 
 import IMP.pmi
 import IMP.pmi.io.crosslink

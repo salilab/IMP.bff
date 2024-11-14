@@ -7,10 +7,9 @@ experimental steady state donor and acceptor anisotropies.
 
 import sys
 import numpy as np
-import scipy.stats
 
 import pylab as plt
-from matplotlib.ticker import (MultipleLocator, AutoMinorLocator)
+from matplotlib.ticker import MultipleLocator
 
 try:
     import numba as nb
@@ -19,7 +18,6 @@ except ImportError:
     print("Python module.")
     sys.exit(0)
 
-import IMP.bff.spectroscopy.kappa2
 from IMP.bff.spectroscopy.kappa2 import s2delta, kappasq_all_delta
 
 

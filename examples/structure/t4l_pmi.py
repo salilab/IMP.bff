@@ -14,7 +14,6 @@ import pathlib
 
 import IMP
 import IMP.core
-import RMF
 import IMP.atom
 import IMP.bff
 import IMP.bff.tools

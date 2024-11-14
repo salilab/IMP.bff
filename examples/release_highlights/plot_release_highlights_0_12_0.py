@@ -15,7 +15,6 @@ To install the latest version with conda::
     conda install -c tpeulen imp.bff
 """
 
-import numpy as np
 import pylab as plt
 import pathlib
 

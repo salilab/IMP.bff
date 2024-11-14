@@ -19,7 +19,6 @@ import json
 import numpy as np
 import pylab as plt
 
-import RMF
 import IMP
 import IMP.rmf
 import IMP.atom

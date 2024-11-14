@@ -1,8 +1,5 @@
 import unittest
 
-import tempfile
-
-import math
 import json
 import numpy as np
 import numpy.testing
