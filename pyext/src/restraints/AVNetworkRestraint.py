@@ -2,8 +2,6 @@
 Restraints for handling distances between accessible volumes.
 """
 
-from __future__ import print_function
-
 import pathlib
 
 import typing

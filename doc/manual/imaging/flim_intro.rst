@@ -400,7 +400,6 @@ object with a ``TTTR`` object that contains the photon stream a set of ``CLSMFra
 
 .. code-block:: python
 
-    from __future__ import print_function
     import tttrlib
     import numpy as np
     import pylab as p
