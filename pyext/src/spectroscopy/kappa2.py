@@ -370,7 +370,7 @@ def kappa_distance(
         a1: np.array,
         a2: np.array
 ) -> typing.Tuple[float, float]:
-    """Calculates the distance between the center of two dipoles and the
+    r"""Calculates the distance between the center of two dipoles and the
     orientation-factor kappa of the dipoles
 
     Calculates for the vectors d1 and d2 pointing to the donors and the vectors
