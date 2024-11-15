@@ -102,6 +102,8 @@ public:
     void add(DecayCurve* decay);
 };
 
+IMP_VALUES(DecayScale, DecayScales);
+
 IMPBFF_END_NAMESPACE
 
 #endif // IMPBFF_DECAYSCALE_H

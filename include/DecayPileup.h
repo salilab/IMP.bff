@@ -106,6 +106,8 @@ public:
     );
 };
 
+IMP_VALUES(DecayPileup, DecayPileups);
+
 IMPBFF_END_NAMESPACE
 
 #endif //IMPBFF_DECAYPILEUP_H

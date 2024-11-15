@@ -349,6 +349,7 @@ public:
 
 };
 
+IMP_VALUES(DecayConvolution, DecayConvolutions);
 
 IMPBFF_END_NAMESPACE
 
