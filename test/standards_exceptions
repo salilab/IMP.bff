@@ -100,4 +100,4 @@ function_name_exceptions=[
     'search_labeling_site']
 
 spelling_exceptions=['xz', 'yz', 'json', 'dijkstra', 'avs', 'idx', 'xy',
-                     'irf', 'astar']
+                     'irf', 'astar', 'linearizations']
