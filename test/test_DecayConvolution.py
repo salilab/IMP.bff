@@ -4,6 +4,7 @@ import platform
 import numpy as np
 import numpy.testing
 import IMP.bff
+import IMP.test
 
 x = np.linspace(0, 20, 32)
 irf_position = 2.0
@@ -22,7 +23,7 @@ def norm_pdf(x, mu, sigma):
 irf_y = norm_pdf(x, irf_position, irf_width)
 
 
-class Tests(unittest.TestCase):
+class Tests(IMP.test.TestCase):
 
     def test_DecayConvolution_init(self):
         irf = IMP.bff.DecayCurve(x, irf_y)
@@ -185,3 +186,6 @@ class Tests(unittest.TestCase):
         decay = IMP.bff.DecayCurve(x, y)
         self.assertAlmostEqual(dc.get_mean_lifetime(decay), 7.812499963266247)
 
+
+if __name__ == '__main__':
+    IMP.test.main()

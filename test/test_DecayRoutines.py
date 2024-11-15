@@ -3,6 +3,7 @@ import numpy as np
 import platform
 
 import IMP.bff
+import IMP.test
 
 
 def norm_pdf(x, mu, sigma):
@@ -26,7 +27,7 @@ def model_irf(
 
 
 
-class Tests(unittest.TestCase):
+class Tests(IMP.test.TestCase):
 
     data = np.array(
         [
@@ -316,3 +317,6 @@ class Tests(unittest.TestCase):
         )
         np.testing.assert_array_almost_equal(ref, irf_shift)
 
+
+if __name__ == '__main__':
+    IMP.test.main()

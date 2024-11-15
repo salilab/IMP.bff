@@ -11,6 +11,7 @@ import IMP.core
 import IMP.atom
 import IMP.em
 import IMP.bff
+import IMP.test
 
 
 create_references = False
@@ -47,7 +48,7 @@ def get_av(
     return av
 
 
-class Tests(unittest.TestCase):
+class Tests(IMP.test.TestCase):
     """
     Tests for the bff.AV class.
     """
@@ -217,3 +218,6 @@ class Tests(unittest.TestCase):
         ssdev = np.sum((p_rda_ref - p_rda)**2.)
         self.assertEqual(ssdev < 30000, True)
 
+
+if __name__ == '__main__':
+    IMP.test.main()

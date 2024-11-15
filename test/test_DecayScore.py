@@ -2,6 +2,7 @@ import unittest
 
 import numpy as np
 import IMP.bff
+import IMP.test
 
 np.random.seed(42)
 
@@ -18,7 +19,7 @@ score_settings = {
 }
 
 
-class Tests(unittest.TestCase):
+class Tests(IMP.test.TestCase):
 
     def test_score_1(self):
         dc = IMP.bff.DecayScore(**score_settings)
@@ -93,3 +94,7 @@ class Tests(unittest.TestCase):
     #     self.assertEqual(np.allclose(dc.data.y, a1), True)
     #     self.assertEqual(np.allclose(dc.model.y, a2), True)
 
+
+
+if __name__ == '__main__':
+    IMP.test.main()

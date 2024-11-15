@@ -9,6 +9,7 @@ import IMP.core
 import IMP.atom
 import IMP.em
 import IMP.bff
+import IMP.test
 
 
 create_references = False
@@ -45,7 +46,7 @@ def get_av(
     return av
 
 
-class Tests(unittest.TestCase):
+class Tests(IMP.test.TestCase):
     """
     Tests for the bff.AVNetworkRestraint class.
     """
@@ -98,3 +99,7 @@ class Tests(unittest.TestCase):
             experiment.append(d['distance'])
         np.testing.assert_almost_equal(model_ref, model, decimal=0)
         np.testing.assert_almost_equal(experiment_ref, experiment_ref, decimal=0)
+
+
+if __name__ == '__main__':
+    IMP.test.main()
