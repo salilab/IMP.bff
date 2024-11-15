@@ -155,9 +155,8 @@ public:
     //! Set origin on the PathMap (the corner of the grid)
     void set_origin(float x, float y, float z);
 
+    void show(std::ostream& out = std::cout) const;
 };
-
-IMP_OBJECTS(PathMapHeader, PathMapHeaders);
 
 IMPBFF_END_NAMESPACE
 

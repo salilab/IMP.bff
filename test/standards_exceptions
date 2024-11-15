@@ -6,7 +6,7 @@ show_exceptions=[
 value_object_exceptions=[
     'VectorDouble', 'VectorFloat', 'VectorInt', 'VectorLong',
     'VectorPathMapTile', 'VectorPathMapTileEdge', 'VectorString',
-    'MapStringAVPairDistanceMeasurement']
+    'MapStringAVPairDistanceMeasurement', 'PathMapHeader']
 
 function_name_exceptions=[
     'AV.init_path_map', 'AV.normalize_rotation',
