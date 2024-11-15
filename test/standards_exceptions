@@ -1,10 +1,12 @@
 show_exceptions=[
     'VectorDouble', 'VectorFloat', 'VectorInt', 'VectorLong',
-    'VectorPathMapTile', 'VectorPathMapTileEdge', 'VectorString']
+    'VectorPathMapTile', 'VectorPathMapTileEdge', 'VectorString',
+    'MapStringAVPairDistanceMeasurement']
 
 value_object_exceptions=[
     'VectorDouble', 'VectorFloat', 'VectorInt', 'VectorLong',
-    'VectorPathMapTile', 'VectorPathMapTileEdge', 'VectorString']
+    'VectorPathMapTile', 'VectorPathMapTileEdge', 'VectorString',
+    'MapStringAVPairDistanceMeasurement']
 
 function_name_exceptions=[
     'AV.init_path_map', 'AV.normalize_rotation',

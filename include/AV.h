@@ -17,6 +17,8 @@
 #include <IMP/algebra/Transformation3D.h>
 #include <IMP/core/XYZ.h>
 #include <IMP/log.h>
+#include <IMP/Value.h>
+#include <IMP/value_macros.h>
 
 
 #include <IMP/bff/PathMap.h>
@@ -49,7 +51,7 @@ typedef enum{
 
 
 /// Container for experimental distance measurement
-class IMPBFFEXPORT AVPairDistanceMeasurement{
+class IMPBFFEXPORT AVPairDistanceMeasurement : public Value {
 
 public:
 
@@ -71,8 +73,10 @@ public:
     */
     double score_model(double model);
 
+    IMP_SHOWABLE_INLINE(AVPairDistanceMeasurement,
+                        { out << "AVPairDistanceMeasurement"; });
 };
-
+IMP_VALUES(AVPairDistanceMeasurement, AVPairDistanceMeasurements);
 
 
 //! A decorator for a particle with accessible volume (AV).
