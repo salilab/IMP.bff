@@ -113,7 +113,8 @@ class Tests(IMP.test.TestCase):
         for feature in pm_features:
             with tempfile.NamedTemporaryFile(suffix=".mrc") as temp_file:
                 fn = temp_file.name
-                fn_ref =  "./references/av_reference_%s.mrc" % feature
+                fn_ref =  self.get_input_file_name(
+                    "av_reference_%s.mrc" % feature)
                 if create_references:
                     fn = fn_ref
                 IMP.bff.write_path_map(av1_map, fn, feature, bounds)
