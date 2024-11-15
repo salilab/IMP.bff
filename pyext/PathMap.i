@@ -1,4 +1,4 @@
-/* Make selected classes extensible in Python */
+IMP_SWIG_VALUE(IMP::bff, PathMapTileEdge, PathMapTileEdges);
 IMP_SWIG_OBJECT(IMP::bff, PathMap, PathMaps);
 
 // Use numpy.i for outputs of AV densities

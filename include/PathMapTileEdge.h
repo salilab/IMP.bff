@@ -10,6 +10,9 @@
 #define IMPBFF_PATHMAPTILEEDGE_H
 
 #include <IMP/bff/bff_config.h>
+#include <IMP/Value.h>
+#include <IMP/value_macros.h>
+#include <IMP/showable_macros.h>
 
 #include <vector>
 
@@ -19,7 +22,7 @@ class PathMap;
 class PathMapTile;
 
 
-class PathMapTileEdge{
+class PathMapTileEdge : public Value {
 
 friend class PathMapTile;
 friend class PathMap;
@@ -47,7 +50,11 @@ public:
             float edge_cost = std::numeric_limits<float>::max()
     ) :
             tile_idx(edge_target), length(edge_cost){}
+
+    IMP_SHOWABLE_INLINE(PathMapTileEdge,
+                        { out << "PathMapTileEdge"; });
 };
+IMP_VALUES(PathMapTileEdge, PathMapTileEdges);
 
 
 IMPBFF_END_NAMESPACE
