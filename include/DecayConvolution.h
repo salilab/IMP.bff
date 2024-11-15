@@ -113,7 +113,7 @@ public:
 private:
 
     /// Input lifetime spectrum
-    DecayLifetimeHandler *lifetime_handler;
+    Pointer<DecayLifetimeHandler> lifetime_handler;
 
     /// Background and shift corrected irf
     DecayCurve *corrected_irf = nullptr;
