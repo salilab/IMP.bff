@@ -1,3 +1,7 @@
+"""@namespace IMP.bff.tools
+   Utility functions.
+"""
+
 import IMP
 import IMP.core
 import IMP.atom

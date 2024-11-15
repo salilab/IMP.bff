@@ -1,5 +1,4 @@
-"""@namespace IMP.bff
-Restraints for handling distances between accessible volumes.
+"""Restraints for handling distances between accessible volumes.
 """
 
 import pathlib
