@@ -1,3 +1,4 @@
+## \example bff/structure/mGBP2_dimer_fp.py
 """
 Guanylate binding proteins: Combining restraints
 ========================================
@@ -34,7 +35,10 @@ import IMP.pmi.restraints.stereochemistry
 import IMP.bff
 import IMP.bff.tools
 import IMP.bff.restraints
+import sys
 
+IMP.setup_from_argv(sys.argv,
+                    "Guanylate binding proteins: Combining restraints")
 
 output_objects = list()
 root_dir = pathlib.Path(IMP.bff.get_example_path('structure')) / "GBP/"
@@ -205,6 +209,9 @@ output_objects.append(fret_restraint)
 
 # Monte carlo sampling. For better results increase the number of frames
 num_frames = 100000
+if IMP.get_is_quick_test():
+    num_frames = 10
+
 rex = IMP.pmi.macros.ReplicaExchange(
     mdl,
     simulated_annealing=False,
