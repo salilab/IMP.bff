@@ -27,7 +27,7 @@ IMPBFF_BEGIN_NAMESPACE
 
 
 
-
+//! Compute convolved decay
 class DecayConvolution : public DecayModifier{
 
 public:

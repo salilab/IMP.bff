@@ -29,6 +29,7 @@ IMPBFF_BEGIN_NAMESPACE
 
 class PathMap;
 
+//!* Header class for path search class PathMap
 class IMPBFFEXPORT PathMapHeader {
 
 friend class IMP::bff::PathMap;

@@ -23,6 +23,12 @@
 
 IMPBFF_BEGIN_NAMESPACE
 
+//! Store and handle lifetime spectra
+/** This is responsible for storing and handling lifetime spectra.
+    A lifetime spectrum consists of a set of lifetimes and their corresponding
+    amplitudes. The class provides methods to set and retrieve the lifetime
+    spectrum, as well as to manipulate it.
+ */
 class IMPBFFEXPORT DecayLifetimeHandler : public Object {
 private:
     std::vector<double> _lifetime_spectrum = std::vector<double>();  //!< Lifetime spectrum / original
