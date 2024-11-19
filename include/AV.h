@@ -95,7 +95,7 @@ class IMPBFFEXPORT AV : public IMP::core::Gaussian {
 
 private:
 
-    IMP::bff::PathMap* av_map_ = nullptr;
+    Pointer<PathMap> av_map_;
 
 protected:
 
