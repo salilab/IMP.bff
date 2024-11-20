@@ -46,6 +46,7 @@ typedef enum{
 
 class PathMap;
 
+//!* Tile used in path search by PathMap
 class IMPBFFEXPORT PathMapTile{
 
 friend class PathMap;
