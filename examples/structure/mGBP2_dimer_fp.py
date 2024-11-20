@@ -39,6 +39,10 @@ import sys
 
 IMP.setup_from_argv(sys.argv,
                     "Guanylate binding proteins: Combining restraints")
+if IMP.get_check_level() >= IMP.USAGE_AND_INTERNAL:
+    print("This example is too slow to test in debug mode - run without")
+    print("internal tests enabled")
+    sys.exit(0)
 
 output_objects = list()
 root_dir = pathlib.Path(IMP.bff.get_example_path('structure')) / "GBP/"
