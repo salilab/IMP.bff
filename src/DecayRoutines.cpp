@@ -339,7 +339,7 @@ void decay_fconv_per_cs(double *fit, double *x, double *lamp, int numexp, int st
             stop1, period_n = (int)ceil(period/dt-0.5);
     double fitcurr, expcurr, tail_a, deltathalf = dt*0.5;
 
-    for (i=0; i<=stop; i++) fit[i]=0;
+    for (i=0; i< stop; i++) fit[i]=0;
     stop1 = (period_n > n_points-1) ? n_points-1 : period_n;
 
     /* convolution */
@@ -357,7 +357,7 @@ void decay_fconv_per_cs(double *fit, double *x, double *lamp, int numexp, int st
             fit[i] += fitcurr*x[2*ne];
         }
         fitcurr *= exp(-(period_n - stop1)*dt/x[2*ne+1]);
-        for (i=0; i<=stop; i++) {
+        for (i=0; i< stop; i++) {
             fitcurr *= expcurr;
             fit[i] += fitcurr*x[2*ne]*tail_a;
         }
