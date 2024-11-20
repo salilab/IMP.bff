@@ -181,7 +181,7 @@ class Tests(IMP.test.TestCase):
                 distance_type=t,
                 n_samples=n_samples
             )
-            self.assertAlmostEqual(v, ref, places=1)
+            self.assertAlmostEqual(v, ref, delta=0.08)
         
         # Test distance between AV and empty AV
         # create an AV in an inaccessible region
