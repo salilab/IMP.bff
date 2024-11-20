@@ -176,4 +176,6 @@ n_samples = 10000
 rda = np.linspace(rda_start, rda_stop, n_bins)
 p_rda = IMP.bff.av_distance_distribution(av1, av2, rda, n_samples=n_samples)
 plt.plot(rda, p_rda)
-plt.show()
+print("See plot.png for the distance distribution between two AVs")
+plt.savefig('plot.png')
+#plt.show()

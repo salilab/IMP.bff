@@ -57,5 +57,6 @@ for frame in tqdm(f.get_root_frames()):
 plt.plot(scores, "o-")
 plt.xlabel("Frame")
 plt.ylabel("Score")
-plt.show()
-
+print("See plot.png for score for each frame")
+plt.savefig('plot.png')
+#plt.show()

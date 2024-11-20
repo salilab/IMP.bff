@@ -110,4 +110,5 @@ ax[1].bar(ind, times_avx, width, color='y', label='AVX')
 ax[1].bar(ind + width, times, width, color='r', label='default')
 ax[1].legend()
 
-p.show()
+p.savefig('plot.png')
+#p.show()
