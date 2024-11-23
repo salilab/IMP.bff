@@ -72,7 +72,9 @@ class Tests(IMP.test.TestCase):
         np.testing.assert_almost_equal(av.get_mean_position(), (-15.9244, 19.2183, 20.1207), decimal=3)
         np.testing.assert_almost_equal(av.get_radii(), (3.5, 0, 0), decimal=3)
         self.assertEqual(av.get_parameters_are_optimized(), False)
-        self.assertEqual(str(av.get_source()), '"Atom CB of residue 55"')
+        p = av.get_source()
+        self.assertIsInstance(p, IMP.Particle)
+        self.assertEqual(p.get_index(), source.get_index())
 
     def test_AccessibleVolumeDecorator(self):
         """
