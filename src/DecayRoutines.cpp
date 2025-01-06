@@ -82,7 +82,7 @@ void decay_fconv(double *fit, double *x, double *lamp, int numexp, int start, in
 
 // fast convolution AVX
 void decay_fconv_avx(double *fit, double *x, double *lamp, int numexp, int start, int stop, double dt) {
-#ifdef WITH_AVX
+#ifdef IMP_BFF_USE_AVX
     int start1 = std::max(1, start);
 
     // make sure that there are always multiple of 4 in the lifetimes
@@ -148,7 +148,7 @@ void decay_fconv_avx(double *fit, double *x, double *lamp, int numexp, int start
         }
     }
     _mm_free(ex); _mm_free(p); free(l2);
-#endif //WITH_AVX
+#endif //IMP_BFF_USE_AVX
 }
 
 
@@ -204,7 +204,7 @@ void decay_fconv_per(double *fit, double *x, double *lamp, int numexp, int start
 // fast convolution, high repetition rate, AVX
 void decay_fconv_per_avx(double *fit, double *x, double *lamp, int numexp, int start, int stop,
                    int n_points, double period, double dt) {
-#ifdef WITH_AVX
+#ifdef IMP_BFF_USE_AVX
 #if IMPBFF_VERBOSE
     std::clog << "FCONV_PER_AVX" << std::endl;
     std::clog << "-- numexp: " << numexp << std::endl;
@@ -326,7 +326,7 @@ void decay_fconv_per_avx(double *fit, double *x, double *lamp, int numexp, int s
     }
     free(l2); _mm_free(p); _mm_free(ex); _mm_free(scale); _mm_free(tails);
 
-#endif //WITH_AVX
+#endif //IMP_BFF_USE_AVX
 }
 
 
@@ -513,18 +513,17 @@ void decay_fconv_per_cs_time_axis(
         double period
 ){
     double dt = time_axis[1] - time_axis[0];
-#ifdef WITH_AVX
+#ifdef IMP_BFF_USE_AVX
     decay_fconv_per_avx(
             model, lifetime_spectrum, irf, (int) n_lifetime_spectrum / 2,
             convolution_start, convolution_stop, n_model, period, dt
     );
-#endif //WITH_AVX
-#ifndef WITH_AVX
+#else
     decay_fconv_per(
         model, lifetime_spectrum, irf, (int) n_lifetime_spectrum / 2,
         convolution_start, convolution_stop, n_model, period, dt
     );
-#endif //WITH_AVX
+#endif //IMP_BFF_USE_AVX
 }
 
 
@@ -538,7 +537,7 @@ void decay_fconv_cs_time_axis(
         int convolution_stop
 ){
     double dt = time_axis[1] - time_axis[0];
-#ifdef WITH_AVX
+#ifdef IMP_BFF_USE_AVX
     decay_fconv_avx(
             output,
             lifetime_spectrum,
@@ -546,8 +545,7 @@ void decay_fconv_cs_time_axis(
             (int) n_lifetime_spectrum / 2,
             convolution_start, convolution_stop, dt
     );
-#endif //WITH_AVX
-#ifndef WITH_AVX
+#else
     decay_fconv(
         output,
         lifetime_spectrum,
@@ -555,7 +553,7 @@ void decay_fconv_cs_time_axis(
         (int) n_lifetime_spectrum / 2,
         convolution_start, convolution_stop, dt
     );
-#endif //WITH_AVX
+#endif //IMP_BFF_USE_AVX
 }
 
 IMPBFF_END_NAMESPACE
