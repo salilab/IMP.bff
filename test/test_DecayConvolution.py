@@ -1,6 +1,4 @@
 import unittest
-import platform
-
 import numpy as np
 import numpy.testing
 import IMP.bff
@@ -52,15 +50,13 @@ class Tests(IMP.test.TestCase):
             IMP.bff.DecayConvolution.FAST_PERIODIC,
             IMP.bff.DecayConvolution.FAST
         ]
-        conv_methods_fast = [
-            IMP.bff.DecayConvolution.FAST_AVX,
-            IMP.bff.DecayConvolution.FAST_PERIODIC_AVX
-        ]
-        if "AMD64" in platform.machine():
-            if platform.system() == "Linux":
-                conv_methods += conv_methods_fast
-            elif platform.system() == "Windows":
-                conv_methods += conv_methods_fast
+        # Only test AVX functionality if it was enabled
+        if IMP.bff.IMP_BFF_HAS_AVX:
+            conv_methods_fast = [
+                IMP.bff.DecayConvolution.FAST_AVX,
+                IMP.bff.DecayConvolution.FAST_PERIODIC_AVX
+            ]
+            conv_methods += conv_methods_fast
         for i in conv_methods:
             settings["convolution_method"] = i
             dc = IMP.bff.DecayConvolution(**settings)
