@@ -148,6 +148,8 @@ void decay_fconv_avx(double *fit, double *x, double *lamp, int numexp, int start
         }
     }
     _mm_free(ex); _mm_free(p); free(l2);
+#else
+    IMP_NOT_IMPLEMENTED;
 #endif //IMP_BFF_USE_AVX
 }
 
@@ -325,7 +327,8 @@ void decay_fconv_per_avx(double *fit, double *x, double *lamp, int numexp, int s
         }
     }
     free(l2); _mm_free(p); _mm_free(ex); _mm_free(scale); _mm_free(tails);
-
+#else
+    IMP_NOT_IMPLEMENTED;
 #endif //IMP_BFF_USE_AVX
 }
 
