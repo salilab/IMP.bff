@@ -43,6 +43,9 @@ if IMP.get_check_level() >= IMP.USAGE_AND_INTERNAL:
     print("This example is too slow to test in debug mode - run without")
     print("internal tests enabled")
     sys.exit(0)
+if sys.maxsize <= 2**32:
+    print("This example uses too much memory to run well on a 32-bit system")
+    sys.exit(0)
 
 output_objects = list()
 root_dir = pathlib.Path(IMP.bff.get_example_path('structure')) / "GBP/"
